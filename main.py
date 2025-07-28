@@ -4,8 +4,21 @@ import sys
 with open("letters.json", "r") as file:
     data = json.load(file)
 
+# DO THIS SO OTHER USERS CAN USE IT AUTOMATICALLY
+# if you want to use this code, you need to clone the AsciiFig repository
+# and add it to your Python path.
+# You can do this by running the following commands in your terminal:
+# !pip install git+
+# !git clone https://github.com/git-jovah/AsciiFig.git
+# import sys
+# sys.path.append('./AsciiFig') 
 
-class charNotFoundError(Exception):
+# ITS GIVING OUTPUT DIRECTLY WITHOUT EVEN CALLING THE WRITE METHOD CHANGE THAT !!
+# GIVE ANOTHER PARAMETER THE USER CAN CHANGE THE BORDER STYLE
+# MAKE A TIME CALCULATOR FOR THE TIME TAKEN TO PRINT THE FIGURE AND MAKE IT PUBLIC SO USER CAN CALL IT
+
+
+class charNotFoundError(Exception): # make this private!!!
     pass
 
 class AsciiFig:
@@ -83,5 +96,5 @@ if __name__ == "__main__":
     if len(sys.argv)>1:
         fig = AsciiFig(" ".join(sys.argv[1:]))
     else:
-        fig=AsciiFig('git-jovah'," ")
+        fig=AsciiFig('git-jovah',"$")
         fig.write()
